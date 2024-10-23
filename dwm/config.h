@@ -6,7 +6,7 @@ static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Ubuntu Mono:size=13:antialias=true:autohint=true" };
+static const char *fonts[]          = { "Ubuntu Mono:size=14:antialias=true:autohint=true" };
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -63,10 +63,10 @@ static const char *firefox[]  = { "firefox", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-    { 0, XF86XK_AudioRaiseVolume,   spawn,     SHCMD("amixer set Master 5%+ unmute") },
-    { 0, XF86XK_AudioLowerVolume,   spawn,     SHCMD("amixer set Master 5%-") },
+    { 0, XF86XK_AudioRaiseVolume,   spawn,     SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0") },
+    { 0, XF86XK_AudioLowerVolume,   spawn,     SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-") },
     { 0, XF86XK_AudioMute,          spawn,     SHCMD("amixer set Master toggle") },
-    { ControlMask, XK_a, spawn, SHCMD("thunar") },
+    { MODKEY,                       XK_a,      spawn,          SHCMD("thunar") },
     { 0, XK_Menu,   spawn,  {.v = firefox } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
