@@ -1,0 +1,2 @@
+#!/bin/bash
+maim --select | tee /home/mus/Downloads/$(date +%s).png  | xclip -selection clipboard -t image/png
