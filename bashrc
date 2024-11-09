@@ -66,7 +66,7 @@ function ex {
 }
 
 ### Aliases
-
+alias grep="grep\ --color=auto"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias sd="sudo shutdown -P now"
@@ -87,4 +87,5 @@ alias yt="yt-dlp -f 'bestvideo[height<=1080][fps<=30]+bestaudio'"
 alias scr="scrcpy --max-size 1600 --max-fps=60 --video-bit-rate=20M"
 
 # PS1 prompt customization
-export PS1="\[\033[38;5;188m\]\u\[\033[38;5;183m\]@\[\033[38;5;243m\]\h \[\033[38;5;141m\]\w\[\033[0m\]$ "
+#export PS1="\[\033[38;5;188m\]\u\[\033[38;5;183m\]@\[\033[38;5;243m\]\h \[\033[38;5;141m\]\w\[\033[0m\]$ "
+PS1='\[\033[01;32m\][\[\033[01;37m\]\W\[\033[01;32m\]]\$\[\033[0m\] '
