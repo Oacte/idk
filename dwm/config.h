@@ -1,35 +1,33 @@
 /* See LICENSE file for copyright and license details. */
 #include <X11/XF86keysym.h>
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 6;        /* gaps between windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int gappx     = 3;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Ubuntu Mono:size=14:antialias=true:autohint=true" };
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_gray1[]       = "#1a1b26";
+static const char col_gray2[]       = "#1a1b26";
+static const char col_gray3[]       = "#f8f8f2";
+static const char col_gray4[]       = "#f8f8f2";
+static const char col_gray5[]       = "#aaaaaa";
+static const char col_cyan[]        = "#7aa2f7";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_gray5},
 };
 
 /* tagging */
 static const char *tags[] = { "I", "II", "III", "IV ", "V", "VI" };
 
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+    // Example placeholder rule
+    { NULL, NULL, NULL, 0, 0, -1 }  // No rules defined
 };
+
+
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -57,17 +55,26 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", NULL };
-static const char *termcmd[]  = { "st", NULL };
-static const char *firefox[]  = { "firefox", NULL };
+/* commands */
+static const char *dmenucmd[]  = { "dmenu_run", NULL };
+static const char *termcmd[]   = { "st", NULL };
+static const char *thorium[]   = { "thorium-browser", NULL };
+static const char *screensh[]  = { "screensh", NULL };
+static const char *pcmanfm[]   = { "pcmanfm", NULL };
+static const char *slock[]     = { "slock", NULL };
 
+/* key bindings */
 static const Key keys[] = {
-	/* modifier                     key        function        argument */
-    { 0, XF86XK_AudioRaiseVolume,   spawn,     SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && wpctl set-mute @DEFAULT_AUDIO_SINK@ 0") },
-    { 0, XF86XK_AudioLowerVolume,   spawn,     SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-") },
-    { 0, XF86XK_AudioMute,          spawn,     SHCMD("amixer set Master toggle") },
-    { MODKEY,                       XK_a,      spawn,          SHCMD("thunar") },
-    { 0, XK_Menu,   spawn,  {.v = firefox } },
+    /* Modifier                     Key               Function        Argument */
+    { 0, XF86XK_AudioRaiseVolume,   spawn,     {.v = (const char *[]){ "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL } } },   /* Volume Up */
+    { 0, XF86XK_AudioLowerVolume,   spawn,     {.v = (const char *[]){ "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL } } }, /* Volume Down */
+    { 0, XF86XK_AudioMute,          spawn,     {.v = (const char *[]){ "amixer", "set", "Master", "toggle", NULL } } },     /* Mute Toggle */
+    
+    { MODKEY,                       XK_a,      spawn,  {.v = pcmanfm } },     /* Open PCManFM */
+    { 0, XK_Menu,                   spawn,  {.v = thorium } },       /* Open Thorium Browser */
+    { 0, XK_Print,                  spawn,  {.v = screensh } },      /* Screenshot */
+    { 0, XF86XK_HomePage,           spawn,  {.v = slock } },         /* Lock Screen */
+    
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
