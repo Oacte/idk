@@ -1,23 +1,28 @@
+# Database configuration
+set database sqlite
+
+# User interface and interaction settings
+map t toggle_statusbar
+map i recolor
+map K zoom in
+map J zoom out
+
+# Status bar configuration
 set statusbar-h-padding 0
 set statusbar-v-padding 0
-map i recolor
-map K zoom in 
-map J zoom out
-set font "Open Sans normal 12"
-set smooth-scroll "true"
-set scroll-step 100
+
+# Scrolling and zooming options
+set smooth-scroll true
 
 
-#set recolor                     true
-#set default-bg                  rgba(0,0,0,0)
-#set default-fg                  "#000000"
-#set recolor-lightcolor          rgba(0,0,0,0.9)
-#set recolor-darkcolor           "#ddd9d4"
-
+# Page display settings
 set page-padding 1
-
 set recolor true
 
+# Font settings
+set font "Ubuntu Mono 12"
+
+# Notification colors
 set notification-error-bg       "#aa4650" # Dark Red
 set notification-error-fg       "#101216" # Background
 set notification-warning-bg     "#dea93f" # Dark Yellow
@@ -25,6 +30,7 @@ set notification-warning-fg     "#101216" # Background
 set notification-bg             "#101216" # Background
 set notification-fg             "#d6deed" # Foreground
 
+# Completion colors
 set completion-bg               "#101216" # Background
 set completion-fg               "#d6deed" # Foreground
 set completion-group-bg         "#101216" # Background
@@ -32,25 +38,33 @@ set completion-group-fg         "#d6deed" # Foreground
 set completion-highlight-bg     "#dea93f" # Dark Yellow
 set completion-highlight-fg     "#162320" # Background
 
+# Index colors
 set index-bg                    "#101216" # Background
 set index-fg                    "#d6deed" # Foreground
-set index-active-bg             "#dea93f" # Dark Yellow 
+set index-active-bg             "#dea93f" # Dark Yellow
 set index-active-fg             "#101216" # Background
 
+# Input bar colors
 set inputbar-bg                 "#101216" # Background
 set inputbar-fg                 "#d6deed" # Foreground
+
+# Status bar colors
 set statusbar-bg                "#101216" # Background
 set statusbar-fg                "#d6deed" # Foreground
 
+# Highlight colors
 set highlight-color             "#dea93f" # Dark Yellow
-set highlight-active-color      "#aa4650" # Dark Red 
+set highlight-active-color      "#aa4650" # Dark Red
 
+# Default color scheme
 set default-bg                  "#101216" # Background
 set default-fg                  "#d6deed" # Foreground
 
+# Loading screen settings
 set render-loading              true
 set render-loading-fg           "#101216" # Background
 set render-loading-bg           "#d6deed" # Foreground
 
+# Recolor options
 set recolor-lightcolor          "#101216" # Background
 set recolor-darkcolor           "#d6deed" # Foreground
