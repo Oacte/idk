@@ -1,0 +1,48 @@
+{
+  "timeStamp": 1732043105541,
+  "version": "1.61.1b3",
+  "userSettings": {
+    "advancedUserEnabled": true,
+    "externalLists": "https://divested.dev/blocklists/Fingerprinting.ubl\nhttps://divested.dev/hosts-domains-wildcards",
+    "importedLists": [
+      "https://divested.dev/blocklists/Fingerprinting.ubl",
+      "https://divested.dev/hosts-domains-wildcards"
+    ],
+    "popupPanelSections": 63
+  },
+  "selectedFilterLists": [
+    "user-filters",
+    "ublock-filters",
+    "ublock-badware",
+    "ublock-privacy",
+    "ublock-quick-fixes",
+    "ublock-unbreak",
+    "easylist",
+    "easyprivacy",
+    "urlhaus-1",
+    "plowe-0",
+    "easylist-notifications",
+    "https://divested.dev/blocklists/Fingerprinting.ubl",
+    "https://divested.dev/hosts-domains-wildcards"
+  ],
+  "hiddenSettings": {},
+  "whitelist": [
+    "api.x.com",
+    "chrome-extension-scheme",
+    "criptixo.xyz",
+    "github.com",
+    "gitlab.com",
+    "moz-extension-scheme",
+    "old.reddit.com",
+    "trumpwon.com",
+    "tubesafari.com",
+    "www.ebay.co.uk",
+    "www.facebook.com",
+    "www.pinterest.com",
+    "www.seat.co.uk"
+  ],
+  "dynamicFilteringString": "behind-the-scene * * noop\nbehind-the-scene * inline-script noop\nbehind-the-scene * 1p-script noop\nbehind-the-scene * 3p-script noop\nbehind-the-scene * 3p-frame noop\nbehind-the-scene * image noop\nbehind-the-scene * 3p noop\nwww.pinterest.com pinterest.com * noop\nwww.pinterest.com pinimg.com * noop\nwww.pinterest.com * 3p-script noop\nwww.pinterest.com www.pinterest.com * noop\n* vidsrc.pro * noop\nfreek.to vidsrc.pro * noop",
+  "urlFilteringString": "",
+  "hostnameSwitchesString": "no-large-media: behind-the-scene false\nno-csp-reports: * true\nno-remote-fonts: gota.io true\nno-scripting: 8kun.top true\nno-scripting: danieljones.au true\nno-cosmetic-filtering: www.google.com true",
+  "userFilters": "! Oct 22, 2024 https://www.ouedkniss.com\nwww.ouedkniss.com##.home-land-header\nwww.ouedkniss.com##.home-page > section:nth-of-type(1)\nwww.ouedkniss.com##.search-top\nwww.ouedkniss.com##div.v-locale--is-ltr.v-container:nth-of-type(3)\nwww.ouedkniss.com##.my-3.o-center-mobile.full-h\n\n! Oct 22, 2024 https://blog.stackademic.com\nblog.stackademic.com##.su.st.ss.m\n\n! Oct 23, 2024 https://hianime.to\nhianime.to##.share-buttons-detail.share-buttons\n\nhianime.to###footer\nhianime.to##.anis-cover-wrap\nhianime.to###wrapper > .active\nhianime.to##.anis-watch-detail\nhianime.to##a.hst-item:nth-of-type(3)\nhianime.to##.header-group\nhianime.to##a.hst-item:nth-of-type(2)\nhianime.to##a.hst-item:nth-of-type(1)\nhianime.to###xfooter-about\nhianime.to##.cbox-genres.cbox\nhianime.to##.category_filter\nhianime.to##.block_area-genres.block_area_sidebar.block_area\nhianime.to##.mw-body\n\n! Oct 23, 2024 https://chatgpt.com\nchatgpt.com##.md\\:px-\\[60px\\].empty\\:hidden.text-token-text-secondary.text-xs.text-center.py-2.px-2.w-full.relative\n\n! Oct 24, 2024 https://www.ouedkniss.com\nwww.ouedkniss.com##.d-print-none.page-top\n\n! Oct 31, 2024 https://www.google.com\nwww.google.com##.HdXONd.app-bottom-content-anchor\n\n! Oct 31, 2024 https://slickdeals.net\nslickdeals.net##.slickdealsHeader__disclaimer\n\n! Nov 1, 2024 https://chatgpt.com\nchatgpt.com##.lg\\:left-0.lg\\:bottom-0.lg\\:absolute.md\\:px-\\[60px\\].empty\\:hidden.text-token-text-secondary.text-xs.text-center.py-2.px-2.w-full\n\n! Nov 6, 2024 https://boards.4chan.org\nboards.4chan.org##.center.middlead\nboards.4chan.org##.hideMobile.globalMessage\nboards.4chan.org##form:nth-of-type(1)\nboards.4chan.org##.boardBanner\nboards.4chan.org###boardNavDesktop\n\n! Nov 7, 2024 https://www.ouedkniss.com\nwww.ouedkniss.com##.d-print-none.selector\n\n! Nov 7, 2024 https://danieljones.au\n||danieljones.au/media/bg.gif$image\n||danieljones.au/media/*.gif$image\n\n! Nov 7, 2024 https://genius.com\ngenius.com##.jUHZcK.LyricsSidebarAd__RecommendationsContainer-sc-1duvwla-0\n||genius.com/songs/10152228/apple_music_player$subdocument\n\n! Nov 8, 2024 https://claude.ai\nclaude.ai##.pt-2.pb-2\\.5.border-b-0.rounded-t-xl.-mb-1.bg-accent-pro-900.border-accent-pro-100\\/20.text-text-200.px-3\\.5.z-\\[5\\].relative.border-0\\.5"
+}
