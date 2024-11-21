@@ -6,6 +6,5 @@ setxkbmap -layout fr,ara -option grp:alt_shift_toggle &
 xwallpaper --zoom Downloads/wallhaven-1px99v_1920x1080.png &
 fastcompmgr & 
 slstatus &
-fast &
 unclutter -idle 3 -root &
 exec dwm
