@@ -6,13 +6,13 @@ static const unsigned int gappx     = 3;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Ubuntu Mono:size=14:antialias=true:autohint=true" };
-static const char col_gray1[]       = "#1a1b26";
-static const char col_gray2[]       = "#1a1b26";
-static const char col_gray3[]       = "#f8f8f2";
-static const char col_gray4[]       = "#f8f8f2";
-static const char col_gray5[]       = "#aaaaaa";
-static const char col_cyan[]        = "#7aa2f7";
+static const char *fonts[]          = { "IBM Plex Mono:size=12:antialias=true:autohint=true" };
+static const char col_gray1[]       = "#000000";
+static const char col_gray2[]       = "#ffffff";
+static const char col_gray3[]       = "#ffffff";   //font
+static const char col_gray4[]       = "#ffffff";
+static const char col_gray5[]       = "#ffffff";
+static const char col_cyan[]        = "#000000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -58,7 +58,6 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 /* commands */
 static const char *dmenucmd[]  = { "dmenu_run", NULL };
 static const char *termcmd[]   = { "st", NULL };
-static const char *thorium[]   = { "thorium-browser", NULL };
 static const char *screensh[]  = { "screensh", NULL };
 static const char *pcmanfm[]   = { "pcmanfm", NULL };
 static const char *slock[]     = { "slock", NULL };
@@ -71,9 +70,10 @@ static const Key keys[] = {
     { 0, XF86XK_AudioMute,          spawn,     {.v = (const char *[]){ "amixer", "set", "Master", "toggle", NULL } } },     /* Mute Toggle */
     
     { MODKEY,                       XK_a,      spawn,  {.v = pcmanfm } },     /* Open PCManFM */
-    { 0, XK_Menu,                   spawn,  {.v = thorium } },       /* Open Thorium Browser */
-    { 0, XK_Print,                  spawn,  {.v = screensh } },      /* Screenshot */
+    { 0, XK_Menu,                   spawn,  {.v = screensh } },      /* Screenshot */
     { 0, XF86XK_HomePage,           spawn,  {.v = slock } },         /* Lock Screen */
+    { MODKEY|ShiftMask, XK_p, spawn, SHCMD("xbacklight -inc 10") },
+    { MODKEY|ShiftMask, XK_l, spawn, SHCMD("xbacklight -dec 10") },
     
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
@@ -99,12 +99,12 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_ampersand,              0)
-	TAGKEYS(                        XK_eacute,                 1)
-	TAGKEYS(                        XK_quotedbl,               2)
-	TAGKEYS(                        XK_apostrophe,             3)
-	TAGKEYS(                        XK_parenleft,              4)
-	TAGKEYS(                        XK_minus,                  5)
+	TAGKEYS(                        XK_1,                      0)
+	TAGKEYS(                        XK_2,                      1)
+	TAGKEYS(                        XK_3,                      2)
+	TAGKEYS(                        XK_4,                      3)
+	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_egrave,                 6)
 	TAGKEYS(                        XK_underscore,             7)
 	TAGKEYS(                        XK_ccedilla,               8)
