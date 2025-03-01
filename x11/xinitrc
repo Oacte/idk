@@ -1,0 +1,13 @@
+#kiwix-serve -p 8080 /home/mus/wikis/*.zim & 
+setxkbmap -layout en,ara -option grp:alt_shift_toggle & 
+xwallpaper --zoom Downloads/wallhaven-m3zrmy_3840x2160.png & 
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
+xrdb .config/shell/xresources.dark
+xset r rate 200 50 & 
+setxkbmap -option caps:escape & 
+slstatus & 
+unclutter -idle 3 -root & 
+redshift -O 10000K & 
+dbus-update-activation-environment --all & 
+dbus-launch dwm 
+

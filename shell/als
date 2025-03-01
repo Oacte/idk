@@ -1,0 +1,23 @@
+alias ls="ls -hN --color=auto --group-directories-first"
+alias grep='grep --color=auto'
+alias sd="sudo shutdown -P now"
+alias SD="sudo shutdown -P now"
+alias e="exit"
+alias yta="yt-dlp --no-playlist --extract-audio"
+alias f="fastfetch --config Downloads/config.jsonc"
+alias unused="sudo pacman -Rns $(pacman -Qtdq)"
+alias db="sudo updatedb"
+alias up="sudo pacman -Syu"
+alias ..="cd .."
+alias b="btop"
+alias s="startx"
+alias v="nvim"
+alias pkill="sudo pkill"
+alias yt="yt-dlp -f 'bestvideo[height<=720][fps<=30]+bestaudio'"
+alias dm="xrdb -merge ~/.config/shell/xresources.dark"
+alias lm="xrdb -merge ~/.config/shell/xresources.light"
+alias rm="rm -vI"
+
+alias als="nvim ~/.config/shell/als"
+
+
