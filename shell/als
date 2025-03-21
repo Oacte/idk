@@ -1,4 +1,3 @@
-alias ls="ls -hN --color=auto --group-directories-first"
 alias grep='grep --color=auto'
 alias sd="sudo shutdown -P now"
 alias SD="sudo shutdown -P now"
@@ -17,7 +16,7 @@ alias yt="yt-dlp -f 'bestvideo[height<=720][fps<=30]+bestaudio'"
 alias dm="xrdb -merge ~/.config/shell/xresources.dark"
 alias lm="xrdb -merge ~/.config/shell/xresources.light"
 alias rm="rm -vI"
-
+alias v="nvim"
 alias als="nvim ~/.config/shell/als"
-
+alias fs="du -h -d 1"
 

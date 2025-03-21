@@ -1,8 +1,9 @@
 #kiwix-serve -p 8080 /home/mus/wikis/*.zim & 
-setxkbmap -layout en,ara -option grp:alt_shift_toggle & 
-xwallpaper --zoom Downloads/wallhaven-m3zrmy_3840x2160.png & 
+#setxkbmap -layout en,ara -option grp:alt_shift_toggle & 
+xwallpaper --stretch Downloads/linux-viola.png & 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 
-xrdb .config/shell/xresources.dark
+#xrdb .config/shell/xresources.dark
+xrdb /home/mus/tf
 xset r rate 200 50 & 
 setxkbmap -option caps:escape & 
 slstatus & 
