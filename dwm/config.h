@@ -9,17 +9,15 @@ static const unsigned int gappx     = 3;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "IBM Plex Mono:size=12:antialias=true:autohint=true" };
-static const char col_gray1[]       = "#282a36";
-static const char col_gray2[]       = "#ffb86c";
-static const char col_gray3[]       = "#ff79c6";
-static const char col_gray4[]       = "#ffb86c";
-static const char col_cyan[]        = "#282a36";
+static const char *fonts[]          = { "IBM Plex:size=12:antialias=true:autohint=true" };
+static const char col_white[]       = "#ffffff";
+static const char col_black[]       = "#000000";
 static const char *colors[][3]      = {
-    /*               fg         bg         border   */
-    [SchemeNorm] = { col_gray3, col_gray1, col_cyan },
-    [SchemeSel]  = { col_gray4, col_cyan,  col_gray2  },
+        /*               fg         bg         border   */
+        [SchemeNorm] = { col_white, col_black, col_black },
+        [SchemeSel]  = { col_white, col_black, col_black },
 };
+
 /* tagging */
 static const char *tags[] = { "I", "II", "III", "IV ", "V", "VI" };
 

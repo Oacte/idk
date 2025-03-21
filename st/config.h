@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Ubuntu Mono:pixelsize=20:antialias=true:autohint=true";
+static char *font = "Terminus:pixelsize=20:antialias=true:autohint=true";
 static char *font2[] = { "FiraCode Nerd Font:pixelsize=18:antialias=true:autohint=true" };
 static int borderpx = 10;
 
