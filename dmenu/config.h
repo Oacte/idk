@@ -11,7 +11,7 @@ static const char *prompt      = NULL;      /* -p  option; prompt to the left of
 static const char *colors[SchemeLast][2] = {
         /*     fg         bg       */
         [SchemeNorm] = { "#ffffff", "#000000" },  // White text on black background
-        [SchemeSel]  = { "#ffffff", "#000000" },  // White text on black background for selection
+        [SchemeSel]  = { "#000000", "#ffffff" },  // Black text on white background for selection
         [SchemeOut]  = { "#ffffff", "#000000" },  // White text on black background for output
 };
 
