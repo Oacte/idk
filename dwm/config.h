@@ -19,6 +19,19 @@ static const char *colors[][3]      = {
         [SchemeSel]  = { col_white, col_black, col_gray },
 };
 
+static const char *const autostart[] = {
+	"dunst", NULL,
+	"xwallpaper", "--stretch", "/home/mus/Downloads/linux-viola.png", NULL,
+	"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,
+	"xrdb", "-merge", "/home/mus/.config/shell/xresources.dark", NULL,
+	"xset", "r", "rate", "200", "50", NULL,
+	"setxkbmap", "-option", "caps:escape", NULL,
+	"slstatus", NULL,
+	"unclutter", "-idle", "3", "-root", NULL,
+	"redshift", "-O", "10000K", NULL,
+	NULL
+};
+
 /* tagging */
 static const char *tags[] = { "I", "II", "III", "IV ", "V", "VI" };
 
@@ -74,6 +87,7 @@ static const Key keys[] = {
     { 0, XF86XK_AudioLowerVolume,   spawn,     {.v = vol_down } },
     { 0, XF86XK_AudioMute,          spawn,     {.v = vol_mute } },
     { MODKEY|ShiftMask,             XK_n,          spawn,          SHCMD(TERMINAL " -e newsboat") },
+    { MODKEY|ShiftMask,             XK_t,          spawn,          SHCMD(TERMINAL " -e torque") },
     { MODKEY,                       XK_a,      spawn,           {.v = pcmanfm } },
     { 0, XK_Menu,                   spawn,           {.v = screensh } },
     { 0, XF86XK_Launch1,            spawn,     SHCMD("slock & xset dpms force off; mpc pause; pauseallmpv") },
