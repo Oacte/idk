@@ -29,6 +29,7 @@ static const char *const autostart[] = {
 	"slstatus", NULL,
 	"unclutter", "-idle", "3", "-root", NULL,
 	"redshift", "-O", "10000K", NULL,
+	"ytlocal", NULL, 
 	NULL
 };
 
@@ -79,6 +80,9 @@ static const char *vol_down[]  = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@"
 static const char *vol_mute[]  = { "amixer", "set", "Master", "toggle", NULL };
 static const char *backlight_up[] = { "xbacklight", "-inc", "10", NULL };
 static const char *backlight_down[] = { "xbacklight", "-dec", "10", NULL };
+static const char *rotatecmd[]  = { "xrandr", "--output", "LVDS1", "--rotate", "inverted", NULL };
+static const char *normalcmd[]  = { "xrandr", "--output", "LVDS1", "--rotate", "normal", NULL };
+
 
 /* key bindings */
 static const Key keys[] = {
@@ -93,6 +97,8 @@ static const Key keys[] = {
     { 0, XF86XK_Launch1,            spawn,     SHCMD("slock & xset dpms force off; mpc pause; pauseallmpv") },
     { MODKEY|ShiftMask, XK_p,       spawn,     {.v = backlight_up } },
     { MODKEY|ShiftMask, XK_l,       spawn,     {.v = backlight_down } },
+    { 0, XF86XK_RotateWindows, spawn, {.v = rotatecmd } },
+    { 0, XF86XK_TaskPane, spawn, {.v = normalcmd } },
     { MODKEY,                       XK_p,      spawn,           {.v = dmenucmd } },
     { MODKEY|ShiftMask,             XK_Return, spawn,           {.v = termcmd } },
     { MODKEY,                       XK_b,      togglebar,       {0} },
