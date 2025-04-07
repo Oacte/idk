@@ -1,0 +1,32 @@
+[global]
+    monitor = 0
+    follow = keyboard
+    width = 370
+    height = 350
+    offset = 0x19
+    padding = 2
+    horizontal_padding = 2
+    transparency = 25
+    font = IBM Mono 14
+    format = "<b>%s</b>\n%b"
+
+
+
+[urgency_low]
+    # IMPORTANT: colors have to be defined in quotation marks.
+    # Otherwise the "#" and following would be interpreted as a comment.
+    background = "#2b2b2b"
+    foreground = "#ffffff"
+    timeout = 5
+    
+[urgency_normal]
+    background = "#2b2b2b"
+    foreground = "#ffffff"
+    timeout = 5
+    
+[urgency_critical]
+    background = "#900000"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"
+    timeout = 5
+
