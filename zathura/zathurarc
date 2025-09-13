@@ -18,13 +18,32 @@ set page-padding 1
 set recolor true
 
 # Font settings
-set font "IBM Plex 12"
+set font "Ubuntu 12"
 
 
 
 set window-title-basename "true"
 set selection-clipboard "clipboard"
 
-# Dracula color theme for Zathura
-# Swaps Foreground for Background to get a light version if the user prefers
+# Nord theme for Zathura (hardcoded)
+set font "Monospace 10"
+set default-bg "#2E3440"    # nord0
+set default-fg "#D8DEE9"    # nord4
+set statusbar-bg "#3B4252"  # nord1
+set statusbar-fg "#ECEFF4"  # nord6
+set inputbar-bg "#2E3440"   # nord0
+set inputbar-fg "#D8DEE9"   # nord4
+set highlight-color "#81A1C1"  # nord9
+set highlight-active-color "#B48EAD"  # nord15
+set completion-bg "#2E3440"   # nord0
+set completion-fg "#D8DEE9"   # nord4
+set completion-highlight-bg "#3B4252"  # nord1
+set completion-highlight-fg "#ECEFF4"  # nord6
+
+
+
+set recolor-lightcolor  "#2E3440"   # nord0 (background)
+set recolor-darkcolor   "#D8DEE9"   # nord4 (text)
+
+set recolor-keephue    true        # Preserve original hues
 

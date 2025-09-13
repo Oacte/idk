@@ -1,0 +1,6 @@
+update-cache 
+loop
+toggle loop
+pl-create fav
+pl-create 
+add /home/mus/stuff/audio/

@@ -1,35 +1,41 @@
 /* See LICENSE file for copyright and license details. */
 #define TERMINAL "st"
-#define TERMCLASS "St"
+#define TERMCLASS "st"
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 3;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "IBM Plex:size=12:antialias=true:autohint=true" };
-static const char col_white[]       = "#ffffff";
-static const char col_black[]       = "#000000";
-static const char col_gray[]        = "#cfcfcf"; // Define new color
+static const char *fonts[]          = { "Terminus:size=12:antialias=true:autohint=false" };
+static const char col_gray1[]       = "#222222";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
         /*               fg         bg         border   */
-        [SchemeNorm] = { col_white, col_black, col_black },
-        [SchemeSel]  = { col_white, col_black, col_gray },
+        [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+        [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
 static const char *const autostart[] = {
+  	"transmission-daemon", NULL,	
 	"dunst", NULL,
-	"xwallpaper", "--stretch", "/home/mus/Downloads/linux-viola.png", NULL,
 	"/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,
 	"xrdb", "-merge", "/home/mus/.config/shell/xresources.dark", NULL,
 	"xset", "r", "rate", "200", "50", NULL,
+        "setxkbmap", "-option", "caps:escape", NULL,
+	"xrandr", "--dpi", "125", NULL, 
 	"setxkbmap", "-option", "caps:escape", NULL,
 	"slstatus", NULL,
 	"unclutter", "-idle", "3", "-root", NULL,
-	"redshift", "-O", "10000K", NULL,
+	"xrandr", "--output", "LVDS1", "--gamma", "0.909:0.966:1.0", NULL,
+
 	"ytlocal", NULL, 
+	"keyb", NULL,
 	NULL
 };
 
@@ -80,10 +86,8 @@ static const char *vol_down[]  = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@"
 static const char *vol_mute[]  = { "amixer", "set", "Master", "toggle", NULL };
 static const char *backlight_up[] = { "xbacklight", "-inc", "10", NULL };
 static const char *backlight_down[] = { "xbacklight", "-dec", "10", NULL };
-static const char *rotatecmd[]  = { "xrandr", "--output", "LVDS1", "--rotate", "inverted", NULL };
-static const char *normalcmd[]  = { "xrandr", "--output", "LVDS1", "--rotate", "normal", NULL };
-
-
+static const char *invertpencmd[] = { "invertpen", NULL };
+static const char *normalpencmd[] = { "normalpen", NULL };
 /* key bindings */
 static const Key keys[] = {
     /* Modifier                     Key               Function        Argument */
@@ -92,13 +96,18 @@ static const Key keys[] = {
     { 0, XF86XK_AudioMute,          spawn,     {.v = vol_mute } },
     { MODKEY|ShiftMask,             XK_n,          spawn,          SHCMD(TERMINAL " -e newsboat") },
     { MODKEY|ShiftMask,             XK_t,          spawn,          SHCMD(TERMINAL " -e torque") },
+    { MODKEY|ShiftMask,             XK_o,          spawn,          SHCMD(TERMINAL " -e alsamixer") },
+    { MODKEY|ShiftMask, 	    XK_m,          spawn,          SHCMD(TERMINAL " -e cmus") },
+    { MODKEY, 	                    XK_less,          spawn,          SHCMD(TERMINAL " -e offsites") },
     { MODKEY,                       XK_a,      spawn,           {.v = pcmanfm } },
     { 0, XK_Menu,                   spawn,           {.v = screensh } },
-    { 0, XF86XK_Launch1,            spawn,     SHCMD("slock & xset dpms force off; mpc pause; pauseallmpv") },
+    { 0, XF86XK_Launch1,            spawn,     SHCMD("slock") },
     { MODKEY|ShiftMask, XK_p,       spawn,     {.v = backlight_up } },
     { MODKEY|ShiftMask, XK_l,       spawn,     {.v = backlight_down } },
-    { 0, XF86XK_RotateWindows, spawn, {.v = rotatecmd } },
-    { 0, XF86XK_TaskPane, spawn, {.v = normalcmd } },
+
+    { 0, XF86XK_RotateWindows, spawn, {.v = invertpencmd } },
+    { 0, XF86XK_TaskPane,      spawn, {.v = normalpencmd } },
+
     { MODKEY,                       XK_p,      spawn,           {.v = dmenucmd } },
     { MODKEY|ShiftMask,             XK_Return, spawn,           {.v = termcmd } },
     { MODKEY,                       XK_b,      togglebar,       {0} },

@@ -1,2 +1,5 @@
+xset r rate 200 50
+setxkbmap -option caps:escape
+
 dbus-update-activation-environment --all & 
 dbus-launch dwm >/dev/null 2>&1
