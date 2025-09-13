@@ -1,39 +1,42 @@
-! Windows PowerShell Blue Theme for Xresources
+Xft.rgba: none
+Xft.hinting: true
+Xft.antialias: true
+Xft.hintstyle: hintfull
 
 ! special
 *.foreground:   #ffffff
-*.background:   #012456
+*.background:   #1d1f21
 *.cursorColor:  #ffffff
 
 ! black
-*.color0:  #000000
-*.color8:  #767676
+*.color0:       #000000
+*.color8:       #4d4d4d
 
 ! red
-*.color1:  #c50f1f
-*.color9:  #e74856
+*.color1:       #cc0403
+*.color9:       #d20300
 
 ! green
-*.color2:  #13a10e
-*.color10: #16c60c
+*.color2:       #19cb00
+*.color10:      #23fd00
 
 ! yellow
-*.color3:  #c19c00
-*.color11: #f9f1a5
+*.color3:       #cecb00
+*.color11:      #fffd00
 
 ! blue
-*.color4:  #0037da
-*.color12: #3b78ff
+*.color4:       #001cd1
+*.color12:      #0026ff
 
 ! magenta
-*.color5:  #881798
-*.color13: #b4009e
+*.color5:       #cb1ed1
+*.color13:      #fd28ff
 
 ! cyan
-*.color6:  #3a96dd
-*.color14: #61d6d6
+*.color6:       #0dcdcd
+*.color14:      #14ffff
 
 ! white
-*.color7:  #cccccc
-*.color15: #f2f2f2
+*.color7:       #e5e5e5
+*.color15:      #ffffff
 
