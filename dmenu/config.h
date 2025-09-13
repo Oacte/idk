@@ -4,15 +4,15 @@
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
-	"IBM Plex:size=16"
+	"Terminus:size=16"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 
 static const char *colors[SchemeLast][2] = {
         /*     fg         bg       */
-        [SchemeNorm] = { "#ffffff", "#000000" },  // White text on black background
-        [SchemeSel]  = { "#000000", "#ffffff" },  // Black text on white background for selection
-        [SchemeOut]  = { "#ffffff", "#000000" },  // White text on black background for output
+        [SchemeNorm] = { "#bbbbbb", "#222222" },
+        [SchemeSel] = { "#ffffff", "#005577" },
+        [SchemeOut] = { "#000000", "#00ffff" },
 };
 
 

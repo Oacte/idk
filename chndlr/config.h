@@ -10,7 +10,7 @@ static const Pair pairs[] = {
 	/* regex                  action */
 
 	/* files */
-	P( "\\.(jpg|png|tiff|gif|svg)$","nsxiv", "%s"        ),
+	P( "\\.(jpg|png|tiff|gif|svg|jpeg)$","nsxiv", "%s"        ),
 	P( "\\.(mp4|mkv|flac|mp3)$", "mpv", "%s"),	
 
 	/* web */
